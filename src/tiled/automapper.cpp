@@ -416,7 +416,7 @@ bool AutoMapper::setupTilesets(Map *src, Map *dst)
         Tileset *replacement = tileset->findSimilarTileset(existingTilesets);
         if (!replacement) {
             mAddedTilesets.append(tileset);
-            undoStack->push(new AddTileset(mMapDocument, tileset));
+//            undoStack->push(new AddTileset(mMapDocument, tileset));
             continue;
         }
 
@@ -875,8 +875,10 @@ void AutoMapper::cleanTilesets()
         if (layerIndex == -1)
             continue;
 
+/*
         QUndoStack *undo = mMapDocument->undoStack();
         undo->push(new RemoveTileset(mMapDocument, layerIndex, tileset));
+*/
     }
     mAddedTilesets.clear();
 }
