@@ -210,6 +210,13 @@ Tileset *VariantToMapConverter::toTileset(const QVariant &variant)
                 }
                 tile->setFrames(frames);
             }
+
+            QVariantMap offset = tileVar["tileoffset"].toMap();
+            if (!offset.isEmpty()) {
+                int offsetX = offset["x"].toInt();
+                int offsetY = offset["y"].toInt();
+                tile->setTileOffset(QPoint(offsetX, offsetY));
+            }
         }
     }
 

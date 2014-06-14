@@ -360,6 +360,15 @@ void MapWriterPrivate::writeTileset(QXmlStreamWriter &w, const Tileset *tileset,
                 w.writeEndElement(); // </animation>
             }
 
+            if (tile->isTileOffsetDefined())
+            {
+                const QPoint offset = tile->tileOffset();
+                w.writeStartElement(QLatin1String("tileoffset"));
+                w.writeAttribute(QLatin1String("x"), QString::number(offset.x()));
+                w.writeAttribute(QLatin1String("y"), QString::number(offset.y()));
+                w.writeEndElement(); // </tileoffset>
+            }
+
             w.writeEndElement(); // </tile>
         }
     }

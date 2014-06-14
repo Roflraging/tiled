@@ -161,6 +161,20 @@ public:
     int currentFrameIndex() const;
     bool advanceAnimation(int ms);
 
+    bool isTileOffsetDefined() const { return mIsTileOffsetDefined; }
+
+    void setIsTileOffsetDefined(bool isDefined) { mIsTileOffsetDefined = isDefined; }
+
+    /**
+     * Returns the offset that is applied when drawing the tile.
+     */
+    QPoint tileOffset() const;
+
+    /**
+     * @see tileOffset
+     */
+    void setTileOffset(QPoint offset) { mTileOffset = offset; setIsTileOffsetDefined(true); }
+
 private:
     int mId;
     Tileset *mTileset;
@@ -173,6 +187,9 @@ private:
     QVector<Frame> mFrames;
     int mCurrentFrameIndex;
     int mUnusedTime;
+
+    QPoint mTileOffset;
+    bool mIsTileOffsetDefined;
 
     friend class Tileset; // To allow changing the tile id
 };

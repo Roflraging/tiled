@@ -391,6 +391,12 @@ void MapReaderPrivate::readTilesetTile(Tileset *tileset)
             tile->setObjectGroup(readObjectGroup());
         } else if (xml.name() == QLatin1String("animation")) {
             tile->setFrames(readAnimationFrames());
+        } else if (xml.name() == QLatin1String("tileoffset")) {
+            const QXmlStreamAttributes oa = xml.attributes();
+            int x = oa.value(QLatin1String("x")).toString().toInt();
+            int y = oa.value(QLatin1String("y")).toString().toInt();
+            tile->setTileOffset(QPoint(x, y));
+            xml.skipCurrentElement();
         } else {
             readUnknownElement();
         }

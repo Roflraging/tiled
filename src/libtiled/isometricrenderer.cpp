@@ -71,7 +71,7 @@ QRectF IsometricRenderer::boundingRect(const MapObject *object) const
         const QPointF bottomCenter = pixelToScreenCoords(object->position());
         const Tile *tile = object->cell().tile;
         const QSize imgSize = tile->image().size();
-        const QPoint tileOffset = tile->tileset()->tileOffset();
+        const QPoint tileOffset = tile->tileOffset();
         return QRectF(bottomCenter.x() + tileOffset.x() - imgSize.width() / 2,
                       bottomCenter.y() + tileOffset.y() - imgSize.height(),
                       imgSize.width(),
@@ -288,7 +288,7 @@ void IsometricRenderer::drawMapObject(QPainter *painter,
         QString name = fm.elidedText(object->name(), Qt::ElideRight,
                                      imgSize.width() + 2);
         if (!name.isEmpty()) {
-            const QPointF tileOffset = tile->tileset()->tileOffset();
+            const QPointF tileOffset = tile->tileOffset();
             const QPointF textPos = pos + tileOffset -
                     QPointF(imgSize.width() / 2, 5 + imgSize.height());
 

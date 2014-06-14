@@ -42,7 +42,8 @@ Tile::Tile(const QPixmap &image, int id, Tileset *tileset):
     mTerrainProbability(-1.f),
     mObjectGroup(0),
     mCurrentFrameIndex(0),
-    mUnusedTime(0)
+    mUnusedTime(0),
+    mIsTileOffsetDefined(false)
 {}
 
 Tile::Tile(const QPixmap &image, const QString &imageSource,
@@ -56,7 +57,8 @@ Tile::Tile(const QPixmap &image, const QString &imageSource,
     mTerrainProbability(-1.f),
     mObjectGroup(0),
     mCurrentFrameIndex(0),
-    mUnusedTime(0)
+    mUnusedTime(0),
+    mIsTileOffsetDefined(false)
 {}
 
 Tile::~Tile()
@@ -155,4 +157,14 @@ bool Tile::advanceAnimation(int ms)
     }
 
     return previousTileId != frame.tileId;
+}
+
+QPoint Tile::tileOffset() const
+{
+    if (!isTileOffsetDefined() && tileset())
+    {
+        return tileset()->tileOffset();
+    }
+
+    return mTileOffset;
 }

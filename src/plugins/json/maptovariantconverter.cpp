@@ -153,6 +153,14 @@ QVariant MapToVariantConverter::toVariant(const Tileset *tileset,
             tileVariant["animation"] = frameVariants;
         }
 
+        if (tile->isTileOffsetDefined()) {
+            const QPoint offset = tile->tileOffset();
+            QVariantMap tileOffset;
+            tileOffset["x"] = offset.x();
+            tileOffset["y"] = offset.y();
+            tileVariant["tileoffset"] = tileOffset;
+        }
+
         if (!tileVariant.empty())
             tilesVariant[QString::number(i)] = tileVariant;
     }

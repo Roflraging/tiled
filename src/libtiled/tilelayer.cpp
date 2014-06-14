@@ -79,7 +79,7 @@ void TileLayer::recomputeDrawMargins()
             if (cell.flippedAntiDiagonally)
                 size.transpose();
 
-            const QPoint offset = tile->tileset()->tileOffset();
+            const QPoint offset = tile->tileOffset();
 
             maxTileSize = maxSize(size, maxTileSize);
             offsetMargins = maxMargins(QMargins(-offset.x(),
@@ -107,7 +107,7 @@ void TileLayer::setCell(int x, int y, const Cell &cell)
         if (cell.flippedAntiDiagonally)
             size.transpose();
 
-        const QPoint offset = cell.tile->tileset()->tileOffset();
+        const QPoint offset = cell.tile->tileOffset();
 
         mMaxTileSize = maxSize(size, mMaxTileSize);
         mOffsetMargins = maxMargins(QMargins(-offset.x(),
