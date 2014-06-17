@@ -43,7 +43,7 @@ AboutDialog::AboutDialog(QWidget *parent): QDialog(parent)
             "    <li>Added a per tile drawing offset which overrides the tileset drawing offset if present.</li>\n"
             "    <li>Modified this about description.</li>\n"
             "</ul></div>\n"
-            "<p align=\"center\">Contact <a href=\"http://stellarjockeys.com/\">http://stellarjockeys.com/</a> for source changes.</p>\n")
+            "<p align=\"center\">Source at <a href=\"https://github.com/Roflraging/tiled/tree/sjtiled\">https://github.com/Roflraging/tiled/tree/sjtiled</a></p>\n")
             .arg(QApplication::applicationVersion());
 
     textBrowser->setHtml(html);

@@ -14,7 +14,7 @@
    <bool>true</bool>
   </property>
   <property name="windowTitle">
-   <string>Tiled</string>
+   <string>SJ Tiled</string>
   </property>
   <property name="unifiedTitleAndToolBarOnMac">
    <bool>true</bool>
@@ -202,7 +202,7 @@
      <normaloff>:/images/16x16/help-about.png</normaloff>:/images/16x16/help-about.png</iconset>
    </property>
    <property name="text">
-    <string>&amp;About Tiled</string>
+    <string>&amp;About SJ Tiled</string>
    </property>
    <property name="menuRole">
     <enum>QAction::AboutRole</enum>
