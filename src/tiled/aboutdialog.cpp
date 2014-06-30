@@ -41,6 +41,7 @@ AboutDialog::AboutDialog(QWidget *parent): QDialog(parent)
             "<div align=\"center\"><ul>\n"
             "    <li>Commented out some undo/redo actions which were slowing automapping.</li>\n"
             "    <li>Added a per tile drawing offset which overrides the tileset drawing offset if present.</li>\n"
+            "    <li>Fixed automapping object output.</li>\n"
             "    <li>Modified this about description.</li>\n"
             "</ul></div>\n"
             "<p align=\"center\">Source at <a href=\"https://github.com/Roflraging/tiled/tree/sjtiled\">https://github.com/Roflraging/tiled/tree/sjtiled</a></p>\n")
